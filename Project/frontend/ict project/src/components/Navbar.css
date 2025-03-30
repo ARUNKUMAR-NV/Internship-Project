@@ -1,0 +1,245 @@
+/* Navbar.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #4a6fa5;
+  --primary-light: #6b8cbe;
+  --primary-dark: #2d5080;
+  --secondary-color: #ff6b6b;
+  --secondary-light: #ff9a9a;
+  --secondary-dark: #e54b4b;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --gray: #6c757d;
+  --dark-gray: #343a40;
+  --black: #212529;
+  --success: #28a745;
+  --danger: #dc3545;
+  --warning: #ffc107;
+  --info: #17a2b8;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+  --border-radius: 8px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  padding: 0.75rem 0;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.navbar-scrolled {
+  box-shadow: var(--shadow-md);
+  padding: 1rem 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-scrolled .navbar-logo span,
+.navbar-scrolled .navbar-item,
+.navbar-scrolled .mobile-toggle .icon {
+  color: var(--primary-dark);
+}
+
+.navbar-scrolled .navbar-logo-icon {
+  color: var(--primary-color);
+}
+
+.navbar-scrolled .navbar-item.active {
+  color: var(--secondary-color);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.navbar-logo-icon {
+  font-size: 1.75rem;
+  margin-right: 0.5rem;
+  color: var(--white);
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navbar-item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.navbar-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.navbar-item.active {
+  font-weight: 600;
+  color: var(--secondary-light);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-button {
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 196, 0);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cart-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.cart-button .icon {
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.auth-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--success);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.auth-button:hover {
+  background-color: var(--dark-gray);
+  transform: translateY(-2px);
+}
+
+.auth-button.admin {
+  background-color: var(--secondary-dark);
+}
+
+.auth-button.admindashboard {
+  background-color: var(--success);
+}
+
+.auth-button.admin:hover {
+  background-color: var(--black);
+}
+
+.auth-button .icon {
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-toggle .icon {
+  font-size: 1.75rem;
+  color: var(--white);
+}
+
+@media screen and (max-width: 992px) {
+  .navbar-menu {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: var(--white);
+    padding: 2rem;
+    transition: var(--transition);
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .navbar-menu.active {
+    left: 0;
+  }
+
+  .navbar-item {
+    color: var(--dark-gray);
+    font-size: 1.25rem;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .navbar-item:hover {
+    background-color: var(--light-gray);
+  }
+
+  .navbar-item.active {
+    color: var(--primary-color);
+    background-color: var(--light-gray);
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .cart-label {
+    display: none;
+  }
+
+  .auth-button span {
+    display: none;
+  }
+
+  .auth-button {
+    padding: 0.5rem;
+  }
+
+  .auth-button .icon {
+    margin-right: 0;
+  }
+
+  .navbar-actions {
+    gap: 0.5rem;
+  }
+}

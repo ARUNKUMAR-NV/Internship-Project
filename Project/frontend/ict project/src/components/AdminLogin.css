@@ -1,0 +1,49 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+.admin-login-container {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+.admin-login-paper {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-login-icon {
+  margin-bottom: 1rem;
+  background-color: #3f51b5;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.admin-login-form {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.admin-login-submit {
+  
+  margin: 1rem 0 !important;
+}
+
+.admin-login-error {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.admin-login-container h1,
+.admin-login-container input,
+.admin-login-container button,
+.admin-login-container p {
+  font-family: 'Poppins', sans-serif;
+}
+
