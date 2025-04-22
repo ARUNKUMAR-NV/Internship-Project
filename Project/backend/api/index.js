@@ -129,5 +129,7 @@ app.delete("/getpro/:id", async (req, res) => {
     res.status(500).json({ message: "Failed to delete product" });
   }
 });
-
+app.get("/", (req, res) => {
+  res.send("Backend API is running");
+});
 module.exports = app;
