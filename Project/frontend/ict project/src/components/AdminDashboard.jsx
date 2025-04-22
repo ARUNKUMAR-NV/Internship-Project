@@ -132,7 +132,7 @@ const AdminDashboard = () => {
 
   const handleUpdateProduct = async () => {
     try {
-      await axios.put(`http://localhost:3019/getpro/${selectedProduct._id}`, newProduct);
+      await axios.put(`https://backend-livid-delta-17.vercel.app/${selectedProduct._id}`, newProduct);
       alert("Product updated successfully!");
       setUpdateOpen(false);
       fetchProducts();
@@ -145,7 +145,7 @@ const AdminDashboard = () => {
   const handleDeleteProduct = async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
-        await axios.delete(`http://localhost:3019/getpro/${id}`);
+        await axios.delete(`https://backend-livid-delta-17.vercel.app/${id}`);
         alert("Product deleted successfully!");
         fetchProducts();
       } catch (error) {
