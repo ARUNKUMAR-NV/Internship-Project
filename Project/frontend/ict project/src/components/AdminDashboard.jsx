@@ -50,7 +50,7 @@ const AdminDashboard = () => {
 
   const fetchProducts = async () => {
     try {
-      const resp = await axios.get("http://localhost:3019/getpro");
+      const resp = await axios.get("https://backend-livid-delta-17.vercel.app/getpro");
       setProducts(resp.data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -59,7 +59,7 @@ const AdminDashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:3019/users");
+      const response = await axios.get("https://backend-livid-delta-17.vercel.app/users");
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -74,7 +74,7 @@ const AdminDashboard = () => {
   const handleBlockUnblockUser = async (id, currentStatus) => {
     try {
       const newStatus = currentStatus === "active" ? "blocked" : "active";
-      await axios.put(`http://localhost:3019/users/${id}`, { status: newStatus });
+      await axios.put(`https://backend-livid-delta-17.vercel.app/${id}`, { status: newStatus });
       fetchUsers();
     } catch (error) {
       console.error("Error updating user status:", error);
@@ -84,7 +84,7 @@ const AdminDashboard = () => {
   const handleDeleteUser = async (id) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
       try {
-        await axios.delete(`http://localhost:3019/users/${id}`);
+        await axios.delete(`https://backend-livid-delta-17.vercel.app/${id}`);
         fetchUsers();
       } catch (error) {
         console.error("Error deleting user:", error);
