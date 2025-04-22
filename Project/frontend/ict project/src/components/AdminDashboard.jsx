@@ -111,7 +111,7 @@ const AdminDashboard = () => {
 
   const handleAddProduct = async () => {
     try {
-      await axios.post("http://localhost:3019/product", newProduct);
+      await axios.post("https://backend-livid-delta-17.vercel.app/product", newProduct);
       alert("Product added successfully!");
       setOpen(false);
       fetchProducts();
