@@ -19,7 +19,7 @@ const Products = ({ isLoggedIn, cart, setCart,isAdmin }) => {
     try {
       setLoading(true);
       // Fetch products from your MongoDB backend
-      const resp = await axios.get("http://localhost:3019/getpro");
+      const resp = await axios.get("https://backend-livid-delta-17.vercel.app/getpro");
       setProducts(resp.data);
       
       // Extract unique categories
