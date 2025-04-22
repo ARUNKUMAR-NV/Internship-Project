@@ -15,7 +15,6 @@ app.use(cors({
 
 app.use(express.json());
 
-const PORT = 3019;
 const JWT_SECRET = "mysecretkey";
 
 require("../database");
