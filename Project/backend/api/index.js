@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const Product = require("./product");
-const User = require("./user");
+const Product = require("../product");
+const User = require("../user");
 
 const app = express();
 app.use(cors());
@@ -13,7 +13,7 @@ app.use(express.json());
 const PORT = 3019;
 const JWT_SECRET = "mysecretkey";
 
-require("./database");
+require("../database");
 
 app.post("/signup", async (req, res) => {
   try {
