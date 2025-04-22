@@ -7,7 +7,12 @@ const Product = require("../product");
 const User = require("../user");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://project-ruddy-mu.vercel.app", // Replace with your actual frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(express.json());
 
 const PORT = 3019;
