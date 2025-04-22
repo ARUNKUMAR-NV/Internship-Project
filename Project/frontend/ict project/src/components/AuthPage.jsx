@@ -72,13 +72,13 @@ const AuthPage = ({ isSignUpMode = false, setIsLoggedIn }) => {
           throw new Error("Password must be at least 6 characters long");
         }
 
-        const response = await axios.post("http://localhost:3019/signup", formData);
+        const response = await axios.post("https://backend-livid-delta-17.vercel.app/signup", formData);
         setLoading(false);
         alert(response.data.message);
         setIsSignUp(false);
         navigate("/login");
       } else {
-        const loginResponse = await axios.post("http://localhost:3019/login", {
+        const loginResponse = await axios.post("https://backend-livid-delta-17.vercel.app/login", {
           email: formData.email,
           password: formData.password,
         });
