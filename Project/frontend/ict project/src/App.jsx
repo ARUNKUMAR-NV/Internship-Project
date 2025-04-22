@@ -8,7 +8,7 @@ import AdminLogin from "./components/AdminLogin";
 import AdminDashboard from "./components/AdminDashboard";
 import Checkout from "./components/Checkout";
 import CartPage from "./components/CartPage";
-import Products from "./components/products";
+import Products from "./components/Products";
 import AboutPage from "./components/AboutPage";
 import ContactPage from "./components/ContactPage";
 
